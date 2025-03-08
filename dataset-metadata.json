@@ -1,0 +1,43 @@
+{
+  "id": "asinow/car-price-dataset",
+  "id_no": 6552734,
+  "datasetSlugNullable": "car-price-dataset",
+  "ownerUserNullable": "asinow",
+  "usabilityRatingNullable": 1.0,
+  "titleNullable": "Car Price Dataset",
+  "subtitleNullable": "This dataset provides 10,000 vehicles with key features that influence car price",
+  "descriptionNullable": "Car Price Prediction Dataset Description:\n\nThis dataset contains 10,000 entries created for the purpose of predicting car prices. Each row represents information about a car and its price. The descriptions of the columns are as follows:\n\n****Columns Descriptions:\n\nBrand: Specifies the brand of the car (e.g., Toyota, BMW, Ford).\nExample values: \"Toyota\", \"BMW\", \"Mercedes\".\n\nModel: Specifies the model of the car (e.g., Corolla, Focus, X5).\nExample values: \"Corolla\", \"Focus\", \"X5\".\n\nYear: The production year of the car. Newer years typically indicate higher prices.\nExample values: 2005, 2018, 2023.\n\nEngine_Size: Specifies the engine size in liters (L). Larger engines generally correlate with higher prices.\nExample values: 1.6, 2.0, 3.5.\n\nFuel_Type: indicates the type of fuel used by the car:\nPetrol: Cars running on gasoline.\nDiesel: Cars running on diesel fuel.\nHybrid: Cars that use both fuel and electricity.\nElectric: Fully electric cars.\n\nTransmission: The type of transmission in the car:\nManual: Manual transmission.\nAutomatic: Automatic transmission.\nSemi-Automatic: Semi-automatic transmission.\n\nMileage: The total distance the car has traveled, measured in kilometers. Lower mileage generally indicates a higher price.\nExample values: 15,000, 75,000, 230,000.\n\nDoors: The number of doors in the car. Commonly 2, 3, 4, or 5 doors.\nExample values: 2, 3, 4, 5.\n\nOwner_Count: The number of previous owners of the car. Fewer owners generally indicate a higher price.\nExample values: 1, 2, 3, 4.\n\nPrice:The estimated selling price of the car. It is calculated based on several factors such as production year, engine size, mileage, fuel type, and transmission.\nExample values: 5,000, 15,000, 30,000.",
+  "datasetId": 6552734,
+  "datasetSlug": "car-price-dataset",
+  "hasDatasetSlug": true,
+  "ownerUser": "asinow",
+  "hasOwnerUser": true,
+  "usabilityRating": 1.0,
+  "hasUsabilityRating": true,
+  "totalViews": 84993,
+  "totalVotes": 395,
+  "totalDownloads": 25302,
+  "title": "Car Price Dataset",
+  "hasTitle": true,
+  "subtitle": "This dataset provides 10,000 vehicles with key features that influence car price",
+  "hasSubtitle": true,
+  "description": "Car Price Prediction Dataset Description:\n\nThis dataset contains 10,000 entries created for the purpose of predicting car prices. Each row represents information about a car and its price. The descriptions of the columns are as follows:\n\n****Columns Descriptions:\n\nBrand: Specifies the brand of the car (e.g., Toyota, BMW, Ford).\nExample values: \"Toyota\", \"BMW\", \"Mercedes\".\n\nModel: Specifies the model of the car (e.g., Corolla, Focus, X5).\nExample values: \"Corolla\", \"Focus\", \"X5\".\n\nYear: The production year of the car. Newer years typically indicate higher prices.\nExample values: 2005, 2018, 2023.\n\nEngine_Size: Specifies the engine size in liters (L). Larger engines generally correlate with higher prices.\nExample values: 1.6, 2.0, 3.5.\n\nFuel_Type: indicates the type of fuel used by the car:\nPetrol: Cars running on gasoline.\nDiesel: Cars running on diesel fuel.\nHybrid: Cars that use both fuel and electricity.\nElectric: Fully electric cars.\n\nTransmission: The type of transmission in the car:\nManual: Manual transmission.\nAutomatic: Automatic transmission.\nSemi-Automatic: Semi-automatic transmission.\n\nMileage: The total distance the car has traveled, measured in kilometers. Lower mileage generally indicates a higher price.\nExample values: 15,000, 75,000, 230,000.\n\nDoors: The number of doors in the car. Commonly 2, 3, 4, or 5 doors.\nExample values: 2, 3, 4, 5.\n\nOwner_Count: The number of previous owners of the car. Fewer owners generally indicate a higher price.\nExample values: 1, 2, 3, 4.\n\nPrice:The estimated selling price of the car. It is calculated based on several factors such as production year, engine size, mileage, fuel type, and transmission.\nExample values: 5,000, 15,000, 30,000.",
+  "hasDescription": true,
+  "isPrivate": false,
+  "keywords": [
+    "education",
+    "automobiles and vehicles",
+    "beginner",
+    "linear regression",
+    "randomForest"
+  ],
+  "licenses": [
+    {
+      "nameNullable": "other",
+      "name": "other",
+      "hasName": true
+    }
+  ],
+  "collaborators": [],
+  "data": []
+}
