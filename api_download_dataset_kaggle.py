@@ -19,10 +19,12 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 api = KaggleApi()
 api.authenticate()
 
+dataset_url = "kalyankumarm/germany-cars-dataset"
+
 # Herunterladen der Daten (germany_auto_industry_kaggle.csv)
-kaggle.api.dataset_download_files('heidarmirhajisadati/german-vehicle-price-and-efficiency-dataset', path = '.', unzip = True)
+kaggle.api.dataset_download_files(dataset_url, path = '.', unzip = True)
 
 # Herunterladen der Metadaten (dataset-metadata.json)
-kaggle.api.dataset_metadata('heidarmirhajisadati/german-vehicle-price-and-efficiency-dataset', path = '.')
+kaggle.api.dataset_metadata(dataset_url, path = '.')
 
 #--------------------------------------------------------------------------------------------------------------------
