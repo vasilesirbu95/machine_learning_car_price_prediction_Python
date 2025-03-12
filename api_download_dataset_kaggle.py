@@ -1,3 +1,9 @@
+"""Beschreibung: Diese Datei ladet den Dataset von Kaggle mit Hilfe eines API Tokens herunter"""
+
+# Entwickler: Vasile Sirbu
+# Datum: 12.03.2025
+
+#--------------------------------------------------------------------------------------------------------------------
 # Installation der kaggle-Bibliothek--> pip install kaggle
 
 # Import
@@ -18,3 +24,5 @@ kaggle.api.dataset_download_files('heidarmirhajisadati/german-vehicle-price-and-
 
 # Herunterladen der Metadaten (dataset-metadata.json)
 kaggle.api.dataset_metadata('heidarmirhajisadati/german-vehicle-price-and-efficiency-dataset', path = '.')
+
+#--------------------------------------------------------------------------------------------------------------------
