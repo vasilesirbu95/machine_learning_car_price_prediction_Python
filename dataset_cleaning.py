@@ -8,6 +8,9 @@ Dataset einlesen, bereinigen und visualisieren
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import sklearn.linear_model as lm
+
+
 
 # Dataset als DataFrame einlesen
 # Kopfzeile ersetzen
@@ -52,7 +55,29 @@ print(dataset.describe())
 
 print(dataset.groupby("Marke").describe())
 
+data_jag_xf = dataset[(dataset["Marke"] == "Jaguar") & (dataset["Model"] == "XF")]
 
+print(data_jag_xf)
 
-#sns.histplot(dataset["Leistung"])
-#plt.show()
+#------------------------------------------------------------------------------------------------------
+# Lineare Regression
+X = []
+for x in data_jag_xf["Baujahr"]:
+    X.append([x])
+
+y = data_jag_xf["Preis"]
+lr = lm.LinearRegression()
+lr.fit(X,y)
+lr.score(X,y)
+predicted_price = lr.predict(X)
+
+#------------------------------------------------------------------------------------------------------
+# Plotten / Visualisierung
+
+plt.scatter(X,y)
+plt.plot(X, predicted_price, color = "red")
+plt.title(data_jag_xf["Marke"].unique()[0]+" "+data_jag_xf["Model"].unique()[0])
+plt.xlabel("Baujahr")
+plt.ylabel("Preis in €")
+plt.show()
+
