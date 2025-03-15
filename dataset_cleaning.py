@@ -53,7 +53,7 @@ dataset = dataset.drop(dataset[dataset["Leistung"] == 1].index, axis = 0)
 # Statistische Beschreibung der Daten 
 print(dataset.describe())
 
-print(dataset.groupby("Marke").describe())
+print("GROUP BY\n",dataset.groupby("Marke")["Preis"])
 
 data_jag_xf = dataset[(dataset["Marke"] == "Jaguar") & (dataset["Model"] == "XF")]
 
@@ -61,23 +61,32 @@ print(data_jag_xf)
 
 #------------------------------------------------------------------------------------------------------
 # Lineare Regression
-X = []
-for x in data_jag_xf["Baujahr"]:
-    X.append([x])
 
-y = data_jag_xf["Preis"]
+grouped = dataset.groupby(["Marke", "Model"])
+
 lr = lm.LinearRegression()
-lr.fit(X,y)
-lr.score(X,y)
-predicted_price = lr.predict(X)
-
+for name, group in grouped:
+    X = []
+    for x in group["Baujahr"]:
+        X.append([x])
+    y = group["Preis"]
+    lr.fit(X,y)
+    lr.score(X,y)
+    predicted_price = lr.predict(X) 
+    plt.scatter(group['Baujahr'], group['Preis'], label=name[0]+" "+name[1])
+    plt.plot(X, predicted_price, color = "red")
+    plt.title(name[0]+" "+name[1])
+    plt.xlabel('Baujahr')
+    plt.ylabel('Preis')
+    plt.legend()
+    plt.show()
 #------------------------------------------------------------------------------------------------------
 # Plotten / Visualisierung
 
-plt.scatter(X,y)
-plt.plot(X, predicted_price, color = "red")
-plt.title(data_jag_xf["Marke"].unique()[0]+" "+data_jag_xf["Model"].unique()[0])
-plt.xlabel("Baujahr")
-plt.ylabel("Preis in €")
-plt.show()
+#plt.scatter(X,y)
+#plt.plot(X, predicted_price, color = "red")
+#plt.title(data_jag_xf["Marke"].unique()[0]+" "+data_jag_xf["Model"].unique()[0])
+#plt.xlabel("Baujahr")
+#plt.ylabel("Preis in €")
+#plt.show()
 
