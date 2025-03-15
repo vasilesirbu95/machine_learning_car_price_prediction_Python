@@ -72,8 +72,10 @@ lr = lm.LinearRegression()
 # Das Speichern der linearen Kennlinie als PNG-Bild in dem Ordner "Bilder"
 for name, group in grouped:
     name_plt = name[0]+"_"+name[1]
+
     if "/" in name_plt:
         name_plt = name_plt.replace("/", "_")
+
     path_plot = save_path.joinpath(name_plt+'.png')
     X = []
     for x in group["Baujahr"]:
