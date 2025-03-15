@@ -9,6 +9,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import sklearn.linear_model as lm
+from pathlib import Path
 
 
 
@@ -63,9 +64,15 @@ print(data_jag_xf)
 # Lineare Regression
 
 grouped = dataset.groupby(["Marke", "Model"])
+save_path = Path('C:/Users/admin/git_project/Bilder/')
 
 lr = lm.LinearRegression()
+
+# Ermittlung der linearen Regression für jedes Model
+# Das Speichern der linearen Kennlinie als PNG-Bild in dem Ordner "Bilder"
 for name, group in grouped:
+    name_plt = name[0]+"_"+name[1]
+    path_plot = save_path.joinpath(name_plt+'.png')
     X = []
     for x in group["Baujahr"]:
         X.append([x])
@@ -73,13 +80,15 @@ for name, group in grouped:
     lr.fit(X,y)
     lr.score(X,y)
     predicted_price = lr.predict(X) 
-    plt.scatter(group['Baujahr'], group['Preis'], label=name[0]+" "+name[1])
+    plt.scatter(group['Baujahr'], group['Preis'], label=name_plt)
     plt.plot(X, predicted_price, color = "red")
-    plt.title(name[0]+" "+name[1])
+    plt.title(name_plt)
     plt.xlabel('Baujahr')
     plt.ylabel('Preis')
     plt.legend()
-    plt.show()
+    plt.savefig(path_plot)
+    
+
 #------------------------------------------------------------------------------------------------------
 # Plotten / Visualisierung
 
