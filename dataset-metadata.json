@@ -1,0 +1,37 @@
+{
+  "id": "kalyankumarm/germany-cars-dataset",
+  "id_no": 3176451,
+  "datasetSlugNullable": "germany-cars-dataset",
+  "ownerUserNullable": "kalyankumarm",
+  "usabilityRatingNullable": 0.35294117647058826,
+  "titleNullable": "GERMANY USED CARS DATASET",
+  "subtitleNullable": "",
+  "descriptionNullable": "**Context:**\nAutoScout24 is one of the largest Europe's car market for new and used cars. We've collected car data from 2011 to 2021.\n\n**Content:**\nIt shows basic fields like make, model, mileage, horse power, etc\u2026",
+  "datasetId": 3176451,
+  "datasetSlug": "germany-cars-dataset",
+  "hasDatasetSlug": true,
+  "ownerUser": "kalyankumarm",
+  "hasOwnerUser": true,
+  "usabilityRating": 0.35294117647058826,
+  "hasUsabilityRating": true,
+  "totalViews": 635,
+  "totalVotes": 1,
+  "totalDownloads": 131,
+  "title": "GERMANY USED CARS DATASET",
+  "hasTitle": true,
+  "subtitle": "",
+  "hasSubtitle": true,
+  "description": "**Context:**\nAutoScout24 is one of the largest Europe's car market for new and used cars. We've collected car data from 2011 to 2021.\n\n**Content:**\nIt shows basic fields like make, model, mileage, horse power, etc\u2026",
+  "hasDescription": true,
+  "isPrivate": false,
+  "keywords": [],
+  "licenses": [
+    {
+      "nameNullable": "unknown",
+      "name": "unknown",
+      "hasName": true
+    }
+  ],
+  "collaborators": [],
+  "data": []
+}
