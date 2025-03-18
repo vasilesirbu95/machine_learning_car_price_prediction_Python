@@ -32,6 +32,6 @@ def api_download_dataset_kaggle():
     kaggle.api.dataset_download_files(dataset_url, path = '.', unzip = True)
 
     # Herunterladen der Metadaten (dataset-metadata.json)
-    pt = kaggle.api.dataset_metadata(dataset_url, path = '.')
+    kaggle.api.dataset_metadata(dataset_url, path = '.')
    
     #--------------------------------------------------------------------------------------------------------------------

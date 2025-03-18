@@ -36,14 +36,8 @@ def dataset_cleaning():
     print(dataset.count())
 
 
-    # Die Zeilen mit fehlnden/korrupten Daten löschen, so dass alle Spalten gleiche Anzahl an Elemente besitzen
-    dataset = dataset.drop(dataset[dataset["Getriebe"].isnull()].index, axis=0)
-    print(dataset.count())
-
-    dataset = dataset.drop(dataset[dataset["Model"].isnull()].index, axis=0)
-    print(dataset.count())
-
-    dataset = dataset.drop(dataset[dataset["Leistung"].isnull()].index, axis=0)
+    # Die Zeilen mit fehlenden Daten löschen, so dass alle Spalten gleiche Anzahl an Elemente besitzen
+    dataset.dropna(inplace=True)
     print(dataset.count())
 
     # Dubletten ermitteln und anzeigen
