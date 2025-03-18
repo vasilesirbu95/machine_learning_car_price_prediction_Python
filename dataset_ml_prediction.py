@@ -20,10 +20,6 @@ def dataset_ml_prediction():
     import sklearn.linear_model as lm
     from pathlib import Path
     from sklearn.linear_model import LinearRegression
-    from sklearn.model_selection import train_test_split
-    from sklearn.preprocessing import OneHotEncoder
-    from sklearn.compose import ColumnTransformer
-
 
     #--------------------------------------------------- Einlesen -------------------------------------------------------------------------
     dataset = pd.read_csv("cleaned_autoscout24-germany-dataset.csv")
@@ -36,11 +32,10 @@ def dataset_ml_prediction():
 
     # Die Daten für ein bestimmtes Fahrzeug gruppieren und sortieren
     data_audi_a4 = dataset[(dataset["Marke"] == "Audi") & (dataset["Model"] == "A4")]
-    print(data_audi_a4)
 
     #--------------------------------------------------- Lineare Regression -------------------------------------------------------------------------
     # Zuweisen der Linearen Regression einer Variable
-    model = LinearRegression()
+    lr = LinearRegression()
 
     # Ordner zum Speichern der Ergebnisse
     save_path = Path("./ML_AUDI_A4")
@@ -52,37 +47,24 @@ def dataset_ml_prediction():
     path_plot = save_path.joinpath(name_plt)
 
     # Speichern von X in ein bestimmtes Format X = [[Element 1], [Element 2],...]
-    #X = data_audi_a4["Baujahr"].to_numpy().reshape(-1,1)
-    X = data_audi_a4[["Baujahr", "Kilometerstand", "Leistung", "Getriebe", "Kraftstoff"]]
-
-    # Transformation der Spalten, um qualitative Features erfassbar zu machen
-    cf = ColumnTransformer([("Getriebe_Kraftstoff", OneHotEncoder(drop = "first"), ["Getriebe", "Kraftstoff"])], remainder = "passthrough")
-
-    # Fitten von cf
-    cf.fit(X)
-
-    # Transformation von X
-    X_transformed = cf.transform(X)
+    X = []
+    for x in data_audi_a4["Baujahr"]:
+        X.append([x])
 
     # Speichern des Outputs in die Variable y
     y = data_audi_a4["Preis"]
 
-    # Aufteilen in Train und Test Daten
-    X_train, X_test, y_train, y_test = train_test_split(X_transformed, y, train_size=0.8, random_state=42)
-
     # Trainieren des Modells
-    model.fit(X_train,y_train)
+    lr.fit(X,y)
 
-    # Bestimmtheitsmaß r^2
-    print("Train: ", model.score(X_train,y_train))
-    print("Test: ", model.score(X_test,y_test))
+    print(lr.score(X,y))
 
     # Prädizierte Werte für alle Input-Einträge berechnen
-    predicted_price = model.predict(X_test) 
+    predicted_price = lr.predict(X) 
 
     # Plotten der tatsächlichen und prädizierten Werte in einem einzigen Plot
     plt.scatter(data_audi_a4['Baujahr'], data_audi_a4['Preis'], label=name_plt)
-    plt.plot(X_test["Baujahr"], predicted_price, color = "red")
+    plt.plot(X, predicted_price, color = "red")
     plt.title(name_plt)
     plt.xlabel('Baujahr')
     plt.ylabel('Preis')

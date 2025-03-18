@@ -16,13 +16,9 @@ Folgende Schritte wurden durchgeführt:
         - Zeilen mit unlogischen/fehlerhaften Daten gelöscht
 
     3. Machine Learning
-
-        - Implementierung und Training von Machine Learning Algorithmen für ein einziges Fahrzeugmodel (AUDI A4)
-            -Lineare Regression
-                - sowohl quantitative als auch qualitative Features eingesetzt --> OneHotEncoder
-                - aufteilen der Daten in Train (80 %) und Test (20 %)
-                - Ausgabe der "score --> (R^2)"  für Train und Test-Daten
-
-            - CNN (Deep Learning)
-
+        - Implementierung und Training der Linearen Regression für ein einziges Fahrzeugmodel
+        - Berechnung der Prediction
+        - Plotten der realen Daten als Scatter-Plot
+        - Plotten der prädizierten Daten als Linien-Plot
         - Erweiterung der Linearen Regression über alle Fahrzeugmodelle
+        - Anwendung von anderen Machine Learning Algorithmen
