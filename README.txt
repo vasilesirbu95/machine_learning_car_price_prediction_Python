@@ -9,7 +9,7 @@ Folgende Schritte wurden durchgeführt:
         - Daten als CSV herunterladen
         - Speichern als der Funktion als .py Datei
 
-    2. Einlesen, Bereinigen und Visualisieren der Daten
+    2. Einlesen, Bereinigen und Speichern der Daten
         - Die CSV-Datei einlesen
         - Entfernung von nicht relevanten/unnötigen Zeilen und Spalten
         - Löschen der Zeilen mit fehlenden Daten --> Alle Spalten besitzen die gleiche Länge
