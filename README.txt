@@ -16,9 +16,24 @@ Folgende Schritte wurden durchgeführt:
         - Zeilen mit unlogischen/fehlerhaften Daten gelöscht
 
     3. Machine Learning
-        - Implementierung und Training der Linearen Regression für ein einziges Fahrzeugmodel
-        - Berechnung der Prediction
-        - Plotten der realen Daten als Scatter-Plot
-        - Plotten der prädizierten Daten als Linien-Plot
-        - Erweiterung der Linearen Regression über alle Fahrzeugmodelle
-        - Anwendung von anderen Machine Learning Algorithmen
+        - Implementierung und Training der Machine Learning Algorithmen für ein einziges Fahrzeugmodel (Volkswagen Golf)
+        - Folgende relevante Machine Learning Methoden werden eingesetzt:
+            - Lineare Regression
+            - Polynomische Regression
+            - Entscheidungsbaumregression
+            - Random Forest Regression
+            - Gradient Boosting Regression
+            - Deep Learning
+        - Als Features für die Modelle werden Kilometerstand, Leistung und Baujahr verwendet
+        - Als Label wird der Preis gewählt
+        - Nur Fahrzeugmodelle die mehr als 50 Einträge/Werte haben, werden berücksichtigt, alle anderen werden herausgefiltert
+        - Finetuning der Hyperparameter (Grid Search)
+        - Berechnung des Bestimmtheitsmaßes R^2
+        - Ermittlung des besten KI-Verfahrens anhand von R^2
+        - Plotten von tatsächlichen und prädizierten Daten
+
+    4. GUI (Graphical User Interface)
+        - Erstellung einer User Interface mittels QT
+        - Auswahl der Marke und Modell
+        - Eingabe von Daten wie Kilometerstand, Leistung und Baujahr
+        - Ausgabe des geschätzten Preises anhand der besten ML-Methode (Random Forest Regression)
