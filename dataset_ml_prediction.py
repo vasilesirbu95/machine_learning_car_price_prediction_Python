@@ -1,4 +1,4 @@
-def dataset_ml_prediction():
+def linear_regression_model():
     """
     Vorhersagen mit Hilfe von Machine Learning Verfahren für ein einziges Fahrzeugmodel erstellen.
     Folgende ML-Methoden werden eingesetzt:
@@ -35,8 +35,8 @@ def dataset_ml_prediction():
     print(dataset.describe())
 
     # Die Daten für ein bestimmtes Fahrzeug gruppieren und sortieren
-    data_audi_a4 = dataset[(dataset["Marke"] == "Audi") & (dataset["Model"] == "A4")]
-    print(data_audi_a4)
+    data_one_car_model = dataset[(dataset["Marke"] == "Jaguar") & (dataset["Model"] == "XF")]
+    print(data_one_car_model)
 
     #--------------------------------------------------- Lineare Regression -------------------------------------------------------------------------
     # Zuweisen der Linearen Regression einer Variable
@@ -51,9 +51,14 @@ def dataset_ml_prediction():
     # Speicher-Pfad für die erstellte Abbildung
     path_plot = save_path.joinpath(name_plt)
 
+    count_elem_fuel = data_one_car_model["Kraftstoff"].value_counts()
+    count_elem_gearbox = data_one_car_model["Getriebe"].value_counts()
+  
+    data_one_car_model[data_one_car_model["Kraftstoff"].value_counts() >= 10]
+
     # Speichern von X in ein bestimmtes Format X = [[Element 1], [Element 2],...]
-    #X = data_audi_a4["Baujahr"].to_numpy().reshape(-1,1)
-    X = data_audi_a4[["Baujahr", "Kilometerstand", "Leistung", "Getriebe", "Kraftstoff"]]
+    #X = data_one_car_model["Baujahr"].to_numpy().reshape(-1,1)
+    X = data_one_car_model[["Baujahr", "Kilometerstand", "Leistung", "Getriebe", "Kraftstoff"]]
 
     # Transformation der Spalten, um qualitative Features erfassbar zu machen
     cf = ColumnTransformer([("Getriebe_Kraftstoff", OneHotEncoder(drop = "first"), ["Getriebe", "Kraftstoff"])], remainder = "passthrough")
@@ -65,7 +70,7 @@ def dataset_ml_prediction():
     X_transformed = cf.transform(X)
 
     # Speichern des Outputs in die Variable y
-    y = data_audi_a4["Preis"]
+    y = data_one_car_model["Preis"]
 
     # Aufteilen in Train und Test Daten
     X_train, X_test, y_train, y_test = train_test_split(X_transformed, y, train_size=0.8, random_state=42)
@@ -81,7 +86,7 @@ def dataset_ml_prediction():
     predicted_price = model.predict(X_test) 
 
     # Plotten der tatsächlichen und prädizierten Werte in einem einzigen Plot
-    plt.scatter(data_audi_a4['Baujahr'], data_audi_a4['Preis'], label=name_plt)
+    plt.scatter(data_one_car_model['Baujahr'], data_one_car_model['Preis'], label=name_plt)
     plt.plot(X_test["Baujahr"], predicted_price, color = "red")
     plt.title(name_plt)
     plt.xlabel('Baujahr')
