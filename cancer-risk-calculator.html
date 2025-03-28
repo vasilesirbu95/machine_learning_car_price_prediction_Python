@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator de Risc Oncologic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        select, input[type="range"], button {
+            margin-top: 5px;
+        }
+        #rezultat {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .checkbox-row {
+            display: flex; /* Flexbox für Inline-Anordnung */
+            align-items: center; /* Vertikale Ausrichtung */
+            margin-bottom: 5px; /* Abstand zwischen den Zeilen */
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator de Risc Oncologic</h1>
+
+    <label for="sex">Sex:</label>
+    <select id="sex">
+        <option value="Masculin">Masculin</option>
+        <option value="Feminin">Feminin</option>
+    </select>
+
+    <label for="varsta">Vârsta:</label>
+    <input type="range" id="varsta" min="18" max="90" value="30">
+    <span id="varsta_valoare">30</span>
+
+    <label>Istoric familial:</label>
+    <div class="checkbox-row">
+        <input type="checkbox" id="istoric_familial">
+        <label for="istoric_familial">Ai rude de gradul 1 cu cancer?</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="varsta_diagnostic">
+        <label for="varsta_diagnostic">Au fost diagnosticate înainte de 50 ani?</label>
+    </div>
+
+    <label>Factori de risc:</label>
+    <div class="checkbox-row">
+        <input type="checkbox" id="fumat">
+        <label for="fumat">Fumat</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="alcool">
+        <label for="alcool">Alcool</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="dieta">
+        <label for="dieta">Dietă nesănătoasă</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="activitate">
+        <label for="activitate">Lipsa activității fizice</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="expunere">
+        <label for="expunere">Expunere la substanțe periculoase</label>
+    </div>
+
+    <label>Ai boli cronice?</label>
+    <div class="checkbox-row">
+        <input type="checkbox" id="hpv">
+        <label for="hpv">HPV</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="hepatita">
+        <label for="hepatita">Hepatita B/C</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="boli_intestinale">
+        <label for="boli_intestinale">Boli intestinale</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="diabet">
+        <label for="diabet">Diabet</label>
+    </div>
+    <div class="checkbox-row">
+        <input type="checkbox" id="sindroame_genetice">
+        <label for="sindroame_genetice">Sindroame genetice</label>
+    </div>
+
+    <button onclick="calculeazaRiscul()">Calculează Riscul</button>
+    <div class="gspb_button_wrapper gspb_button-id-gsbp-afab051" id="gspb_button-id-gsbp-afab051"><a class="wp-block-greenshift-blocks-buttonbox gspb-buttonbox wp-element-button" href="/contact/" rel="noopener"><span class="gspb-buttonbox-textwrap"><span class="gspb-buttonbox-text"><span class="gspb-buttonbox-title"><button onclick="calculeazaRiscul()">Calculează Riscul</button></span></span><span class="gspb-buttonbox-icon"><svg xmlns="http://www.w3.org/2000/svg" style="width:5rem;height:5rem;margin:10px" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M24 0v22.78h-2.87V4.9L2.03 24 0 21.97l19.1-19.1H1.26V0H24Z"></path></svg></span></span></a></div>
+    <div id="rezultat"> Scor de risc: --</div>
+
+    <script>
+        document.getElementById('varsta').addEventListener('input', function() {
+            document.getElementById('varsta_valoare').textContent = this.value;
+        });
+
+        function calculeazaRiscul() {
+            let scor = 0;
+            if (document.getElementById('istoric_familial').checked) {
+                scor += 20;
+                if (document.getElementById('varsta_diagnostic').checked) {
+                    scor += 10;
+                }
+            }
+            scor += document.getElementById('fumat').checked ? 10 : 0;
+            scor += document.getElementById('alcool').checked ? 5 : 0;
+            scor += document.getElementById('dieta').checked ? 5 : 0;
+            scor += document.getElementById('activitate').checked ? 0 : 5;
+            scor += document.getElementById('expunere').checked ? 10 : 0;
+            scor += (document.getElementById('hpv').checked ? 10 : 0) +
+                (document.getElementById('hepatita').checked ? 10 : 0) +
+                (document.getElementById('boli_intestinale').checked ? 10 : 0) +
+                (document.getElementById('diabet').checked ? 10 : 0) +
+                (document.getElementById('sindroame_genetice').checked ? 10 : 0);
+
+            document.getElementById('rezultat').textContent = ` Scor de risc: ${scor}%`;
+        }
+    </script>
+</body>
+</html>
