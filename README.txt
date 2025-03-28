@@ -7,6 +7,7 @@ Folgende Schritte wurden durchgeführt:
         - Erstellen eines neuen Tokens --> Automatisches herunterladen von "kaggle.json"
         - Die JSON Datei in einem Ordner "C:Users/.kaggle" speichern
         - Daten als CSV herunterladen
+        - Speichern als der Funktion als .py Datei
 
     2. Einlesen, Bereinigen und Visualisieren der Daten
         - Die CSV-Datei einlesen
@@ -14,6 +15,7 @@ Folgende Schritte wurden durchgeführt:
         - Löschen der Zeilen mit fehlenden Daten --> Alle Spalten besitzen die gleiche Länge
         - Dubletten entfernt
         - Zeilen mit unlogischen/fehlerhaften Daten gelöscht
+        - Speichern als der Funktion als .py Datei
 
     3. Machine Learning
         - Implementierung und Training der Machine Learning Algorithmen für ein einziges Fahrzeugmodel (Volkswagen Golf)
