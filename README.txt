@@ -38,5 +38,5 @@ Folgende Schritte wurden durchgeführt:
         - Eingabe von Daten wie Kilometerstand, Leistung und Baujahr
         - Ausgabe des geschätzten Preises anhand der besten ML-Methode (Random Forest Regression)
 
-    Entwickler: Vasile SIrbu
+    Entwickler: Vasile Sirbu
     Datum: 28.03.2025
