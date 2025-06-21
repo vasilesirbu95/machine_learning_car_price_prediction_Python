@@ -1,44 +1,51 @@
-Im folgenden Projekt werden die Preise der Fahrzeuge in Deutschland mit Hilfe von Machine Learning vorhergesagt.
-Die Daten stammen von autoscout24 und sind für den Zeitraum von 2011 bis 2021 vorhanden.
+# 🚗 Machine Learning: Car Price Prediction
 
-Folgende Schritte wurden durchgeführt:
-    1. Herunterladen des Datasets direkt von Kaggle mit Hilfe von API
-        - Erstellen vom neuen Account bei Kaggle
-        - Erstellen eines neuen Tokens --> Automatisches herunterladen von "kaggle.json"
-        - Die JSON Datei in einem Ordner "C:Users/.kaggle" speichern
-        - Daten als CSV herunterladen
-        - Speichern als der Funktion als .py Datei
+Ein Machine-Learning-Projekt zur Vorhersage von Autopreisen basierend auf verschiedenen Fahrzeugmerkmalen. Ziel ist es, einen möglichst präzisen Regressionsansatz zur Prognose realer Marktpreise zu entwickeln. Die Daten stammen von autoscout24 und sind für den Zeitraum von 2011 bis 2021 vorhanden.
 
-    2. Einlesen, Bereinigen und Speichern der Daten
-        - Die CSV-Datei einlesen
-        - Entfernung von nicht relevanten/unnötigen Zeilen und Spalten
-        - Löschen der Zeilen mit fehlenden Daten --> Alle Spalten besitzen die gleiche Länge
-        - Dubletten entfernt
-        - Zeilen mit unlogischen/fehlerhaften Daten gelöscht
-        - Speichern als der Funktion als .py Datei
+## 🔍 Projektziele
 
-    3. Machine Learning
-        - Implementierung und Training der Machine Learning Algorithmen für ein einziges Fahrzeugmodel (Volkswagen Golf)
-        - Folgende relevante Machine Learning Methoden werden eingesetzt:
-            - Lineare Regression
-            - Polynomische Regression
-            - Entscheidungsbaumregression
-            - Random Forest Regression
-            - Gradient Boosting Regression
-            - Deep Learning
-        - Als Features für die Modelle werden Kilometerstand, Leistung und Baujahr verwendet
-        - Als Label wird der Preis gewählt
-        - Nur Fahrzeugmodelle die mehr als 50 Einträge/Werte haben, werden berücksichtigt, alle anderen werden herausgefiltert
-        - Finetuning der Hyperparameter (Grid Search)
-        - Berechnung des Bestimmtheitsmaßes R^2
-        - Ermittlung des besten KI-Verfahrens anhand von R^2
-        - Plotten von tatsächlichen und prädizierten Daten
+- Entwicklung eines ML-Modells zur Preisprognose
+- Vergleich mehrerer Regressionsverfahren (Lineare Regression, Polynomische Regression, Entscheidungsbaumregression, Random Forest Regression, Gradient Boosting Regression, Deep Learning)
+- Evaluation der Modelle mittels gängiger Metriken (R²)
+- GUI zur Ergebnisberechnung für unterschiedliche Marken und Modelle
 
-    4. GUI (Graphical User Interface)
-        - Erstellung einer User Interface mittels QT
-        - Auswahl der Marke und Modell
-        - Eingabe von Daten wie Kilometerstand, Leistung und Baujahr
-        - Ausgabe des geschätzten Preises anhand der besten ML-Methode (Random Forest Regression)
+## 📊 Verwendete Features (Auszug)
 
-    Entwickler: Vasile Sirbu | Masterstudent Fahrzeugtechnik, TU Berlin | Schwerpunkt: Datenanalyse, Machine Learning, Automotive
-    Datum: 28.03.2025
+- Marke, Modell, Kilometerstand, Erstzulassung, Leistung
+
+## 🧠 Genutzte Methoden & Tools
+
+- **Python**, **pandas**, **NumPy**
+- **TesorFlow**, **Keras** zum Erstellen des Deep Learning Modells
+- **time** zur Bestimmung der Rechenzeit
+- **joblib** zum Speichern der ML Modelle
+- **os** zum Arbeiten mit Pfaden
+- **Scikit-learn** für Modelltraining und -evaluierung
+- **Matplotlib** für Visualisierung
+- **PyQt5** zur Erstellung der GUI
+
+## ⚙️ Workflow
+
+1. Datenimport (kaggle API) & Exploration
+2. Feature Engineering & Preprocessing
+3. Modelltraining & Hyperparameter-Tuning
+4. Evaluation & Visualisierung (GUI)
+
+## 📈 Ergebnisse
+
+- Bestes Modell: **Random Forest Regressor**
+- Metrik: R²: 0.9267
+
+*Hinweis: Ergebnisse abhängig vom genutzten Datensatz.*
+
+
+## 📁 Projektstruktur
+
+```bash
+├── data/               # Eingabedaten
+├── main/               # Hauptskript für Training & Modellierung
+├── requirements.txt    # Python-Abhängigkeiten
+└── README.md           # Diese Datei
+
+Entwickler: Vasile Sirbu | Masterstudent Fahrzeugtechnik, TU Berlin | Schwerpunkt: Datenanalyse, Machine Learning, Automotive
+Datum: 28.03.2025
