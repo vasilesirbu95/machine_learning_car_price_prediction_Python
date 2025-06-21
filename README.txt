@@ -35,6 +35,11 @@ Ein Machine-Learning-Projekt zur Vorhersage von Autopreisen basierend auf versch
 
 - Bestes Modell: **Random Forest Regressor**
 - Metrik: R²: 0.9267
+- Hyperparameter: {'max_depth': 8,
+                   'max_features': 'sqrt',
+                   'min_samples_leaf': 1,
+                   'min_samples_split': 4,
+                   'n_estimators': 195}
 
 *Hinweis: Ergebnisse abhängig vom genutzten Datensatz.*
 
