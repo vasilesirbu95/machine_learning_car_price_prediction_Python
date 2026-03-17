@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+car_price_models/
+*.csv
+.kaggle/
+.ipynb_checkpoints/
