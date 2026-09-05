@@ -16,14 +16,13 @@ Die Anwendung bietet eine moderne Streamlit-Oberfläche für:
 
 ## Vorschau
 
-Die folgenden Platzhalter können durch eigene Screenshots ersetzt werden:
+### Preisprognose
 
-Füge die Screenshots nach dem Anlegen des Ordners `docs/screenshots/` mit diesen Zeilen ein:
+![Preisprognose der Streamlit-App](docs/screenshots/price-prediction.png)
 
-```markdown
-![Preisprognose - Streamlit](docs/screenshots/price-prediction.png)
-![Datensatz und Modellanalyse - Streamlit](docs/screenshots/model-analysis.png)
-```
+### Datensatz und Modellanalyse
+
+![Datensatz und Modellanalyse der Streamlit-App](docs/screenshots/model-analysis.png)
 
 ## Projektziele
 
